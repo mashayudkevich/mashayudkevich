@@ -48,13 +48,13 @@ void dfs(int i,int j,int iw,int ih,unsigned char*odata, int*comp,int num){
 
 
 int main(){
-     // строка, путь к файлу
+     // РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ
     char* inputPath = "homyak.png";
 
 
 
     int iw, ih, n,t=0,num=0;
-    // Загружаем изображение, чтобы получить информацию о ширине, высоте и цветовом канале
+    // Р—Р°РіСЂСѓР¶Р°РµРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ, С‡С‚РѕР±С‹ РїРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ С€РёСЂРёРЅРµ, РІС‹СЃРѕС‚Рµ Рё С†РІРµС‚РѕРІРѕРј РєР°РЅР°Р»Рµ
     unsigned char *idata = stbi_load(inputPath, &iw, &ih, &n, 0);
     if (idata == NULL) {
         printf("ERROR: can't read file %s\n", inputPath );
@@ -62,7 +62,7 @@ int main(){
     }
 
 
-    //Переходим от 4 канального изображения к 1 канальному
+    //РџРµСЂРµС…РѕРґРёРј РѕС‚ 4 РєР°РЅР°Р»СЊРЅРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Рє 1 РєР°РЅР°Р»СЊРЅРѕРјСѓ
 
     unsigned char* odata = (unsigned char*)malloc(iw*ih*sizeof(unsigned char));
     int k=0;
@@ -109,7 +109,7 @@ int main(){
         k++;}
 
 
-    //выгружаем полученное изображение
+    //РІС‹РіСЂСѓР¶Р°РµРј РїРѕР»СѓС‡РµРЅРЅРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ
     char *outputPath="output.png";
     stbi_write_png(outputPath, iw, ih, n, nextdata, 0);
     stbi_image_free(idata);
